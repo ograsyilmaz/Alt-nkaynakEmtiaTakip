@@ -34,7 +34,7 @@ var xhttpsoap = function (reqestMethod, Url, soapAction) {
     }
 
     xhttp.setRequestHeader('Content-Type', 'text/xml;charset=utf-8');
-//    xhttp.setRequestHeader('SOAPAction', soapAction);
+  xhttp.setRequestHeader('SOAPAction', soapAction);
 //xhttp.setRequestHeader('Host', 'data.altinkaynak.com');
 //    xhttp.setRequestHeader('Accept', '*/*');
 
