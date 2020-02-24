@@ -5,19 +5,35 @@ var username = "AltinkaynakWebServis";
 var password = "AltinkaynakWebServis";
 var requesDataMethod = "POST";
 var Url = "https://data.altinkaynak.com/DataService.asmx";
-var soapActionHeader = "http://data.altinkaynak.com/GetGold";
-var soap = '<?xml version="1.0" encoding="utf-8"?>' +
-    '<soap12:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://www.w3.org/2003/05/soap-envelope">' +
-    ' <soap12:Header>' +
-    '<AuthHeader xmlns="http://data.altinkaynak.com/">' +
-    '<Username>' + username + '</Username>' +
-    '<Password>' + password + '</Password>' +
-    '</AuthHeader>' +
-    '</soap12:Header>' +
-    ' <soap12:Body>' +
-    '<GetGold xmlns="https://data.altinkaynak.com/" />' +
-    '</soap12:Body>' +
-    '</soap12:Envelope>';
+//var soapActionHeader = "http://data.altinkaynak.com/GetGold";
+// var soap = '<?xml version="1.0" encoding="utf-8"?>' +
+//     '<soap12:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://www.w3.org/2003/05/soap-envelope">' +
+//     ' <soap12:Header>' +
+//     '<AuthHeader xmlns="http://data.altinkaynak.com/">' +
+//     '<Username>' + username + '</Username>' +
+//     '<Password>' + password + '</Password>' +
+//     '</AuthHeader>' +
+//     '</soap12:Header>' +
+//     ' <soap12:Body>' +
+//     '<GetGold xmlns="https://data.altinkaynak.com/" />' +
+//     '</soap12:Body>' +
+//     '</soap12:Envelope>';
+
+
+var soap ='<?xml version="1.0" encoding="utf-8"?>'+
+'<soap12:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://www.w3.org/2003/05/soap-envelope">'+
+  '<soap12:Header>'+
+   ' <AuthHeader xmlns="http://data.altinkaynak.com/">'+
+      '<Username>'+'</Username>'+
+      '<Password>'+'</Password>'+
+    '</AuthHeader>'+
+  '</soap12:Header>'+
+  '<soap12:Body>'+
+   '<GetGold xmlns="http://data.altinkaynak.com/" />'+
+  '</soap12:Body>'+
+'</soap12:Envelope>';
+
+
 var xhttp = new XMLHttpRequest();
 
 var xhttpsoap = function (reqestMethod, Url, soapAction) {
@@ -33,8 +49,8 @@ var xhttpsoap = function (reqestMethod, Url, soapAction) {
 
     }
 
-    xhttp.setRequestHeader('Content-Type', 'text/xml');
-  xhttp.setRequestHeader('SOAPAction', soapAction);
+    xhttp.setRequestHeader('Content-Type', 'application/soap+xml');
+//   xhttp.setRequestHeader('SOAPAction', soapAction);
 //xhttp.setRequestHeader('Host', 'data.altinkaynak.com');
 //    xhttp.setRequestHeader('Accept', '*/*');
 
