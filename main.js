@@ -4,7 +4,7 @@ var t_button = document.getElementById('button');
 var username = "AltinkaynakWebServis";
 var password = "AltinkaynakWebServis";
 var requesDataMethod = "POST";
-var Url = "https://data.altinkaynak.com/DataService.asmx";
+var Url = "http://data.altinkaynak.com/DataService.asmx";
 var soapActionHeader = "http://data.altinkaynak.com/GetGold";
 var soap = '<?xml version="1.0" encoding="utf-8"?>' +
     '<soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">' +
