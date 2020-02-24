@@ -38,6 +38,8 @@ var xhttp = new XMLHttpRequest();
 
 var xhttpsoap = function (reqestMethod, Url) {
     xhttp.open(reqestMethod, Url, true);
+    xhttp.setRequestHeader('Content-Type', 'application/soap+xml');
+    xhttp.send(soap);
     var data = "";
     xhttp.onreadystatechange = function () {
         if (xhttp.readyState == 4) {
@@ -49,7 +51,7 @@ var xhttpsoap = function (reqestMethod, Url) {
 
     }
 
-    xhttp.setRequestHeader('Content-Type', 'application/soap+xml');
+   
 //   xhttp.setRequestHeader('SOAPAction', soapAction);
 //xhttp.setRequestHeader('Host', 'data.altinkaynak.com');
 //    xhttp.setRequestHeader('Accept', '*/*');
@@ -57,7 +59,7 @@ var xhttpsoap = function (reqestMethod, Url) {
      //xhttp.setRequestHeader('Connection', 'keep-alive')
 //xhttp.setRequestHeader('User-Agent', 'PostmanRuntime/7.22.0');
     // xhttp.setRequestHeader('Access-Control-Allow-Credentials', 'true');
-    xhttp.send(soap);
+  
 
     return data;
 }
