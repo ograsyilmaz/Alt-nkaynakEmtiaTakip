@@ -3,7 +3,7 @@ var t_tablo = document.getElementById('t-tablo');
 var t_button = document.getElementById('button');
 var username = "AltinkaynakWebServis";
 var password = "AltinkaynakWebServis";
-var requesDataMethod = "Post";
+var requesDataMethod = "POST";
 var Url = "https://data.altinkaynak.com/DataService.asmx";
 var soapActionHeader = "http://data.altinkaynak.com/GetGold";
 var soap = '<?xml version="1.0" encoding="utf-8"?>' +
@@ -33,7 +33,7 @@ var xhttpsoap = function (reqestMethod, Url, soapAction) {
 
     }
 
-    xhttp.setRequestHeader('Content-Type', 'text/xml;charset=utf-8');
+    xhttp.setRequestHeader('Content-Type', 'text/xml');
   xhttp.setRequestHeader('SOAPAction', soapAction);
 //xhttp.setRequestHeader('Host', 'data.altinkaynak.com');
 //    xhttp.setRequestHeader('Accept', '*/*');
