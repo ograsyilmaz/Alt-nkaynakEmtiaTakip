@@ -41,15 +41,19 @@ var xhttpsoap = function (reqestMethod, Url) {
     xhttp.setRequestHeader('Content-Type', 'application/soap+xml');
     xhttp.send(soap);
     var data = "";
-    xhttp.onreadystatechange = function () {
-        if (xhttp.readyState == 4) {
-            if (xhttp.status == 200) {
-                alert(xmlhttp.responseText);
-                data = xmlhttp.responseText;
-            }
-        }
+    // xhttp.onreadystatechange = function () {
+    //     if (xhttp.readyState == 4) {
+    //         if (xhttp.status == 200) {
+    //             alert(xmlhttp.responseText);
+    //             data = xmlhttp.responseText;
+    //         }
+    //     }
 
-    }
+    // }
+    xhttp.onload = function(){ alert (xhttp.responseText); } 
+    xhttp.onerror = function(){ alert (xhttp.responseText); }
+
+
 
    
 //   xhttp.setRequestHeader('SOAPAction', soapAction);
