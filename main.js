@@ -36,7 +36,7 @@ var soap ='<?xml version="1.0" encoding="utf-8"?>'+
 
 var xhttp = new XMLHttpRequest();
 
-var xhttpsoap = function (reqestMethod, Url, soapAction) {
+var xhttpsoap = function (reqestMethod, Url) {
     xhttp.open(reqestMethod, Url, true);
     var data = "";
     xhttp.onreadystatechange = function () {
@@ -62,6 +62,6 @@ var xhttpsoap = function (reqestMethod, Url, soapAction) {
     return data;
 }
 var data = "";
-data = xhttpsoap(requesDataMethod, Url, soapActionHeader);
+data = xhttpsoap(requesDataMethod, Url);
 
 console.log(data);
